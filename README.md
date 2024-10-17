@@ -90,9 +90,9 @@ docker run -d -p 8000:8000 --name alert-proxy -e FEISHU_APP_ID='your_app_id' -e 
 [Grafana](https://github.com/grafana/grafana) + [PrometheusAlert](https://github.com/feiyu563/PrometheusAlert) + [feishu-alert-proxy](https://github.com/sungaomeng/feishu-alert-proxy)
 
 ### 流程
-1.Grafana 触发告警 -> PrometheusAlert (Webhook Url: http://prometheus-alert-svs.ops:8080/prometheusalert?type=fs&tpl=prometheus-fs&fsurl=http://feishu-alert-proxy-svs:8000/webhook)
-2.Prometheus 将收到的消息经过自定义模板渲染成消息文本转发给 feishu-alert-proxy
-3.feishu-alert-proxy 根据配置文件(rules.json)中定义的规则和群聊对应关系去过滤收到的消息并发送到飞书群聊
+1. Grafana 触发告警 -> PrometheusAlert (Webhook Url: http://prometheus-alert-svs.ops:8080/prometheusalert?type=fs&tpl=prometheus-fs&fsurl=http://feishu-alert-proxy-svs:8000/webhook)
+2. Prometheus 将收到的消息经过自定义模板渲染成消息文本转发给 feishu-alert-proxy
+3. feishu-alert-proxy 根据配置文件(rules.json)中定义的规则和群聊对应关系去过滤收到的消息并发送到飞书群聊
 
 PrometheusAlert prometheus-fs 自定义模版(适配Grafana)
 ```
