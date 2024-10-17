@@ -86,6 +86,14 @@ docker run -d -p 8000:8000 --name alert-proxy -e FEISHU_APP_ID='your_app_id' -e 
 
 ## 示例
 
+### 需求
+1. Grafana 告警到飞书
+2. 告警要使用飞书卡片(要易读,要好看)
+3. 不同的告警需要发送给不同的飞书群
+  - 网关4XX告警 发送到 网关4XX告警群
+  - 网关5XX告警 发送到 网关5XX告警群
+  - 默认兜底给 Grafana告警兜底群
+
 ### 环境
 [Grafana](https://github.com/grafana/grafana) + [PrometheusAlert](https://github.com/feiyu563/PrometheusAlert) + [feishu-alert-proxy](https://github.com/sungaomeng/feishu-alert-proxy)
 

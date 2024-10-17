@@ -1,22 +1,22 @@
 [
     {
-        "keywords": ["告警"],
-        "conditions": "lambda text: 'info' in text and 'APM' not in text and 'Test' not in text",
-        "chat_name": "【通知】Gitlab系统通知"
-    },
-    {
         "keywords": ["warning"],
-        "conditions": "lambda text: 'warning' in text and 'APM' not in text and 'Test' not in text",
+        "conditions": "lambda text: 'warning' in text and 'Test' not in text",
         "chat_name": "【监控告警】【warning】DevOps Group"
     },
     {
         "keywords": ["网关5XX状态码"],
         "conditions": "lambda text: True",
-        "chat_name": "【监控告警】【error】Apisix相关"
+        "chat_name": "【监控告警】【error】网关5XX"
+    },
+    {
+        "keywords": [网关4XX状态码],
+        "conditions": "lambda text: True",
+        "chat_name": "【监控告警】【warning】网关4XX"
     },
     {
         "keywords": [],
         "conditions": "lambda text: True",
-        "chat_name": "【监控告警】【warning】Apisix相关"
+        "chat_name": "【告警】Grafana相关兜底"
     }
 ]
